@@ -1,0 +1,201 @@
+/* Inspired by 
+Scott Kellum April 8, 2022 
+https://codepen.io/scottkellum/pen/WWeXab */
+
+:root {
+  --h-1: #A71523;
+  --n-1000:#24292E;
+  --n-900: #383F45;
+  --n-800: #464C52;
+  --n-700: #596066;
+  --n-600: #676E76;
+  --n-500: #7F8790;
+  --n-400: #9EA5AD;
+  --n-300: #CED2D6;
+  --n-200: #E5E7EA;
+  --n-100: #F6F7F9;
+
+  --background-color: var(--n-1000);
+  --text-color: var(--n-100);
+
+  --shadow3: var(--n-1000);
+  --shadow4: var(--n-900) ;
+  --shadow5: var(--n-800);
+  --btn-base: var(--n-1000);
+  --btn-text: var(--n-100);
+  --btn-surface: var(--n-900);  
+}
+
+body {
+  overflow-x: hidden;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  min-height: 500vh;
+  margin-top: -5em;
+  animation: bg-color 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+@keyframes bg-color {
+  0% {
+    background-color: var(--background-color);
+  }
+  100% {
+    background-color: var(--h-1);
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.progress {
+  justify-self: center;
+  display: flex;
+  gap: 15vw;
+  z-index: 2;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  height: 5em;
+  width: 5em;
+  background-color: var(--background-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  animation: progress 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -.5s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.nav-icon{
+  color: white;
+  font-size: 20px;
+  transform: translateX(-2vw) translateY(30px);
+}
+
+
+@keyframes progress {
+  0% {
+    background-color: var(--n-1000);
+    width: 8%;
+  }
+  95% {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+  }
+  96% {
+    width: 120%;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  100% {
+    background-color: var(--h-1);
+  }  
+}
+
+@keyframes progress-logo {
+  0% {
+    transform: translateX(1vw);
+  }
+  99% {
+    transform: translateX(111vw);
+  }
+  100% {
+    transform: translateX(150vw);
+  }  
+}
+
+#hero-img {
+  border-radius: 100em;
+  height: 100vh;
+  margin: auto;
+  width: 90vw;
+  z-index: -1;
+  box-shadow: 0px 2px 0px 20px var(--shadow3), 0px 4px 0px 50px var(--shadow4), 0px 8px 0px 85px var(--shadow5), 0px 12px 0px 100px var(--btn-base);
+}
+#hero-text {
+  text-shadow: 0px 5px var(--shadow3), 0px 10px var(--shadow4) ;
+  position: absolute;
+  top: 45vh;
+  left: 30vw;
+  font-size: 150px;
+}
+
+.progress #logo {
+  width: 5em;
+  animation: progress-logo 1s linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -.5s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+#map {
+  width:500px;
+}
+
+
+.scroll-wrap {
+  position: absolute;
+  width: 0;
+  height: 0;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll-area {
+  scroll-snap-align: start;
+  padding: 5em;
+  min-height: 100vh;
+  width: 100vw;
+  height: fit-content;
+  background-color: black;
+  color: var(--n-100);
+}
+
+.scroll-area #menu ul {
+  display: flex;
+  gap: 10vw;
+}
+
+
+button{
+  transform: translate(0,0);
+  box-shadow: 0px 2px var(--shadow3), 0px 4px var(--shadow4), 0px 8px var(--shadow5), 0px 12px 0px 5px var(--btn-base);
+  border-radius: .5em;
+  border-style: var(--h-1) solid;
+  background-color: var(--btn-surface);
+  color: var(--btn-text);
+  cursor: pointer;
+  text-align: center;
+  transition: transform 2s, translate 2s, box-shadow 2s;
+  text-decoration: none;
+}
+
+button:hover {
+  animation: hover .3s forwards;
+}
+
+button {
+  animation: unhover .3s forwards;
+}
+
+button:active{
+  animation: pressed .2s forwards;
+}
+
+@keyframes pressed {
+  0% {
+      transform: translate(0,0px);
+      box-shadow: 0px 2px var(--shadow3), 0px 4px var(--shadow4), 0px 8px var(--shadow5), 0px 12px 0px 5px var(--btn-base);
+  }
+  100% {
+      transform: translate(0,4px);
+      box-shadow: 0px 1px var(--shadow3), 0px 3px var(--shadow4), 0px 7px var(--shadow5), 0px 8px 0px 5px var(--btn-base)
+  }
+}

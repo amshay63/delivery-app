@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mansfield Delivery</title>
+    <script src="https://kit.fontawesome.com/7a809c373c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+2&display=swap" rel="stylesheet">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+       -->
+  </head>
+  <body>
+    <div class="progress">
+      <a href="#Account"><img src="assets/logo.png" id="logo" alt="horse"></a>
+      <a href="#Menu"><i class="nav-icon fa-regular fa-circle"></i></a>
+      <a href="#Order"><i class="nav-icon fa-regular fa-circle"></i></a>
+      <a href="#Delivery"><i class="nav-icon fa-regular fa-circle"></i></a>
+      <a href="#Receipts"><i class="nav-icon fa-regular fa-circle"></i></a>
+      <!-- <a href="#Account"><i class="fa-regular fa-circle"></i></a> -->
+    </div>
+    
+    <div class="scroll-wrap">
+      <div class="scroll-area" id="Hero">
+        <img id="hero-img" src="assets/campus_main.jpg">
+        <h1 id="hero-text">DeliveryMU</h1>
+      </div>
+      <div class="scroll-area" id="Menu">
+        <div id="menu">
+          <h1>Menu</h1>
+          <label for="cafeteria">Location</label>
+          <select>
+            <option>Cafe</option>
+          </select>
+          <h2>Appetizers</h2>
+          <ul>
+            <li><span>Jalapeno Poppers</span> - $8.99 <button onclick="addItem('Jalapeno Poppers', 8.99)">+</button></li>
+            <li><span>Mozzarella Sticks</span> - $7.99 <button onclick="addItem('Mozzarella Sticks', 7.99)">+</button></li>
+            <li><span>French Fries</span> - $4.99 <button onclick="addItem('French Fries', 4.99)">+</button></li>
+          </ul>
+          
+          <h2>Entrees</h2>
+          <ul>
+            <li><span>Buffalo Ranch Chicken Sandwich® </span> - $14.99 <button onclick="addItem('Buffalo Ranch Chicken Sandwich®', 14.99)">+</button></li>
+            <li><span>Burger</span> - $16.99 <button onclick="addItem('Burger', 16.99)">+</button></li>
+            <li><span>Chicken Fingers</span> - $12.99 <button onclick="addItem('Chicken Fingers', 12.99)">+</button></li>
+          </ul>
+          
+          <h2>Desserts</h2>
+          <ul>
+            <li><span>Churros</span> - $6.99 <button onclick="addItem('Churros', 6.99)">+</button></li>
+            <li><span>Ice Cream</span> - $4.99 <button onclick="addItem('Ice Cream', 4.99)">+</button></li>
+            <li><span>Apple Pie</span> - $5.99 <button onclick="addItem('Apple Pie', 5.99)">+</button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="scroll-area" id="Order">
+        <h1>Order</h1>
+        <div>
+          <h2>Order</h2>
+          <ul id="cart-items">
+          </ul>
+          <p>Total: $<span id="total">0.00</span></p>
+          <button onclick="checkout()">Checkout</button>
+        </div>
+      </div>
+      <div class="scroll-area" id="Delivery">
+        <h1>Delivery</h1>
+        <img id="map" src="assets/map.jpg">
+        <button>Track Delivery</button>
+      </div>
+      <div class="scroll-area" id="Receipts">
+        <div><label for="receipt-dates">Choose a Receipt</label>
+        <select name="receipt-dates" id="receipt-dates">
+          <option></option>
+        </select>
+        <button onclick="findReceipt()">Show Receipts</button>
+        </div>
+        <div id="output"></div>
+      </div>
+      <div class="scroll-area" id="Account">
+        <h1>Account</h1>
+        <p> Student Name </p>
+        <p> Dorm Number </p>
+        <p> Meal Plan </p>
+      </div>
+    </div>
+    <!-- Data validation and error message, back arrows-->
+    <script src="script.js"></script> 
+  </body>
+</html>
